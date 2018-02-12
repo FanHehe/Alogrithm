@@ -1,0 +1,19 @@
+{
+  "name": "alogrithm",
+  "version": "1.0.0",
+  "description": "Based on C^",
+  "main": "index.js",
+  "scripts": {
+    "clean": "rm -f **/**.out"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fanhehe/Alogrithm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fanhehe/Alogrithm/issues"
+  },
+  "homepage": "https://github.com/fanhehe/Alogrithm#readme"
+}
