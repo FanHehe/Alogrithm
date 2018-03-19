@@ -18,8 +18,7 @@ int main (int argc, char** argv) {
 
     target.sin_family = AF_INET;
     target.sin_port = htons(8093);
-    inet_pton(AF_INET, argv[1], &target.sin_addr);
-
+    inet_pton(AF_INET, argv[1], &target.sin_addr.s_addr);
 
     connect(sock, (struct sockaddr*) &target, sizeof(target));
 

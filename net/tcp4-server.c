@@ -32,9 +32,10 @@ int main () {
         if ((childFd = fork()) == 0) {
             close(sock);
             str_echo(clientSock);
+            close(clientSock);
             exit(0);
         }
-        close(childFd);
+        close(clientSock);
     }
 }
 
