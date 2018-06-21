@@ -1,7 +1,18 @@
-import java.util.ArrayList;
-
-
 public class Main {
+
+/*
+	     	  A
+	   		↙   ↘
+	   	  D       G
+	    ↙   ↘    ↙   ↘
+	  F      B  C     E
+
+	层次遍历顺序：ADGFBCE
+	前序遍历顺序：ADFBGCE
+	中序遍历顺序：FDBACGE
+	后序遍历顺序：FBDCEGA
+ */
+
 
 	public static BinaryNode getTree () {
 
@@ -21,44 +32,10 @@ public class Main {
 		G.setRight(E);
 
 		return A;
-
 	}
-
-	// public static BinaryNode buildTreePrevMid (String prev, String mid) {}
-
-	// public static BinaryNode buildTreeMidTail (String mid, String tail) {}
-
-	// public static BinaryNode buildTreePrevTail (String prev, String tail) {}
-
-	public static void levelTraversal (Node tree) {
-
-		if (tree == null) return ;
-
-		BinaryNode temp;
-
-		ArrayList<Node> list = new ArrayList<Node>();
-
-		list.add(tree);
-
-		while (!list.isEmpty()) {
-
-			temp = (BinaryNode)list.remove(0);
-
-			if (temp.getLeft() != null) list.add(temp.getLeft());
-			if (temp.getRight() != null) list.add(temp.getRight());
-
-			System.out.print(temp.getData());
-		}
-	}
-
-	public static void prevTraversal (Node tree) {}
-
-	public static void midTravelsal  (Node tree) {}
-
-	public static void tailTravelsal (Node tree) {}
 
 	public static void main (String[] args) {
 		BinaryNode tree = Main.getTree();
-		Main.levelTraversal(tree);
+		Traversal.levelTraversal(tree);
 	}
 }
