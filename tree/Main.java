@@ -11,6 +11,12 @@ public class Main {
 	前序遍历顺序：ADFBGCE
 	中序遍历顺序：FDBACGE
 	后序遍历顺序：FBDCEGA
+
+	ADGFBCE
+	ADFBGCE
+	FDBACGE
+	FBDCEGA
+
  */
 
 
@@ -37,5 +43,18 @@ public class Main {
 	public static void main (String[] args) {
 		BinaryNode tree = Main.getTree();
 		Traversal.levelTraversal(tree);
+		System.out.println();
+		Traversal.prevTraversal(tree);
+		System.out.println();
+		Traversal.prevTraversalRecursion(tree);
+		System.out.println();
+		Traversal.midTraversalRecursion(tree);
+		System.out.println();
+		Traversal.midTraversal(tree);
+		System.out.println();
+		Traversal.tailTraversal(tree);
+		System.out.println();
+		Traversal.tailTraversalRecursion(tree);
+		System.out.println();
 	}
 }
