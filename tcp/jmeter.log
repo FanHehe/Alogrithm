@@ -1,0 +1,19 @@
+2018-10-02 15:02:04,213 INFO o.a.j.u.JMeterUtils: Setting Locale to en_EN
+2018-10-02 15:02:04,262 INFO o.a.j.JMeter: Loading user properties from: /usr/local/Cellar/jmeter/5.0/libexec/bin/user.properties
+2018-10-02 15:02:04,262 INFO o.a.j.JMeter: Loading system properties from: /usr/local/Cellar/jmeter/5.0/libexec/bin/system.properties
+2018-10-02 15:02:04,273 INFO o.a.j.JMeter: Copyright (c) 1998-2018 The Apache Software Foundation
+2018-10-02 15:02:04,273 INFO o.a.j.JMeter: Version 5.0 r1840935
+2018-10-02 15:02:04,273 INFO o.a.j.JMeter: java.version=10
+2018-10-02 15:02:04,273 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2018-10-02 15:02:04,273 INFO o.a.j.JMeter: os.name=Mac OS X
+2018-10-02 15:02:04,273 INFO o.a.j.JMeter: os.arch=x86_64
+2018-10-02 15:02:04,273 INFO o.a.j.JMeter: os.version=10.12.6
+2018-10-02 15:02:04,274 INFO o.a.j.JMeter: file.encoding=UTF-8
+2018-10-02 15:02:04,274 INFO o.a.j.JMeter: Max memory     =1073741824
+2018-10-02 15:02:04,274 INFO o.a.j.JMeter: Available Processors =4
+2018-10-02 15:02:04,285 INFO o.a.j.JMeter: Default Locale=English (EN)
+2018-10-02 15:02:04,286 INFO o.a.j.JMeter: JMeter  Locale=English (EN)
+2018-10-02 15:02:04,286 INFO o.a.j.JMeter: JMeterHome=/usr/local/Cellar/jmeter/5.0/libexec
+2018-10-02 15:02:04,286 INFO o.a.j.JMeter: user.dir  =/Users/fanhehe/Workspace/Alogrithm/tcp
+2018-10-02 15:02:04,286 INFO o.a.j.JMeter: PWD       =/Users/fanhehe/Workspace/Alogrithm/tcp
+2018-10-02 15:02:04,293 INFO o.a.j.JMeter: IP: 172.18.6.151 Name: fanhehe FullName: 172.18.6.151

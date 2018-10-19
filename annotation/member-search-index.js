@@ -1,0 +1,1 @@
+memberSearchIndex = [{"l":"main(String[])","h":"","u":"main-java.lang.String:A-"},{"l":"MyAnnotation()","h":"","u":""},{"l":"MyAnnotation(int)","h":"","u":""},{"l":"run()","h":"","u":""}]

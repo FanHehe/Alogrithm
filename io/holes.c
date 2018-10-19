@@ -32,3 +32,9 @@ int main () {
     if (fd) close(fd);
     return 0;
 }
+
+
+int name () {
+    FILE* a = fopen("./assets/chinese.txt");
+    fclose(a);
+}
