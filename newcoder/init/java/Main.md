@@ -14,5 +14,7 @@ int arr2 = (int[])arrs.get(0); // arr2 == arr [1,2,3];
 ```java
 // Integer数组转换成List
 LinkedList<Integer> list =new LinkedList<Integer>(Arrays.asList(Arrs));
+
+IntStream.of(arr).boxed().toArray(Integer[]::new);
 ```
 
