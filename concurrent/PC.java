@@ -71,4 +71,27 @@ public class PC {
 
         }
     }
+
+    public <T extends Comparable<T>> void max_heap(T[] list, int index) {
+        int left = index * 2;
+        int right = index * 2 + 1;
+
+        int largest = index;
+
+        if (left < list.length && list[left].compareTo(list[largest]) > 0) {
+            largest = left;
+        }
+
+        if (right < list.length && list[right].compareTo(list[largest]) > 0) {
+            largest = right;
+        }
+
+        if (largest != index) {
+            T temp = list[index];
+            list[index] = list[largest];
+            list[largest] = temp;
+
+            max_heap(list, largest);
+        }
+    }
 }

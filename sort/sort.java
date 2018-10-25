@@ -5,7 +5,7 @@ Arrays.stream(array).forEach(System.out::print);
 void bubbleSort (int[] array) {
 	for (int i = 0, length = array.length; i < length; i++) {
 		for (int j = i + 1; j < length; j ++) {
-			if (array[i] > array[j]) 
+			if (array[i] > array[j])
 			{
 				int temp = array[i];
 				array[i] = array[j];
@@ -155,7 +155,7 @@ void merge (int[] array, int start, int center, int end) {
 	int k = 0;
 	int i = start;
 	int j = center + 1;
-	
+
 	int temp[] = new int[end - start + 1];
 
 	while (i <= center && j <= end) {
@@ -189,4 +189,25 @@ void mergeSort (int[] array, int start, int end) {
 
 		merge(array, start, center, end);
 	}
+}
+
+<T extends Comparable<T>> int binarySearch(T[] array, T value) {
+
+    int left = 0;
+    int right = array.length - 1;
+
+    while (left <= right) {
+
+        int mid = (left + right) >>> 1;
+
+        if (value.compareTo(array[mid]) < 0) {
+            right = mid - 1;
+        } else if (value.compareTo(array[mid]) > 0) {
+            left = mid + 1;
+        } else {
+            return mid;
+        }
+    }
+
+    return - (left + 1);
 }
