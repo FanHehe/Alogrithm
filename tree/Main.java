@@ -1,60 +1,25 @@
 public class Main {
+    public static void main(String[] args) {
+        BinarySearchTree<Integer, String> tree = new BinarySearchTree<>();
 
-/*
-	     	  A
-	   		↙   ↘
-	   	  D       G
-	    ↙   ↘    ↙   ↘
-	  F      B  C     E
+        tree.insert(1);
+        tree.insert(2);
+        tree.insert(8);
+        tree.insert(4);
+        tree.remove(2);
+        tree.insert(7);
+        tree.insert(3);
+        tree.insert(6);
+        tree.remove(7);
+        tree.insert(9);
+        tree.insert(5);
+        tree.insert(-1);
+        tree.remove(1);
 
-	层次遍历顺序：ADGFBCE
-	前序遍历顺序：ADFBGCE
-	中序遍历顺序：FDBACGE
-	后序遍历顺序：FBDCEGA
-
-	ADGFBCE
-	ADFBGCE
-	FDBACGE
-	FBDCEGA
-
- */
-
-
-	public static BinaryNode getTree () {
-
-		BinaryNode A = new BinaryNode("A");
-		BinaryNode B = new BinaryNode("B");
-		BinaryNode C = new BinaryNode("C");
-		BinaryNode D = new BinaryNode("D");
-		BinaryNode E = new BinaryNode("E");
-		BinaryNode F = new BinaryNode("F");
-		BinaryNode G = new BinaryNode("G");
-
-		A.setLeft(D);
-		A.setRight(G);
-		D.setLeft(F);
-		D.setRight(B);
-		G.setLeft(C);
-		G.setRight(E);
-
-		return A;
-	}
-
-	public static void main (String[] args) {
-		BinaryNode tree = Main.getTree();
-		Traversal.levelTraversal(tree);
-		System.out.println();
-		Traversal.prevTraversal(tree);
-		System.out.println();
-		Traversal.prevTraversalRecursion(tree);
-		System.out.println();
-		Traversal.midTraversalRecursion(tree);
-		System.out.println();
-		Traversal.midTraversal(tree);
-		System.out.println();
-		Traversal.tailTraversal(tree);
-		System.out.println();
-		Traversal.tailTraversalRecursion(tree);
-		System.out.println();
-	}
+        tree.prevTraversalRecursion(tree.root);
+        System.out.println("");
+        tree.midTraversalRecursion(tree.root);
+        System.out.println("");
+        tree.tailTraversalRecursion(tree.root);
+    }
 }

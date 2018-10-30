@@ -1,18 +1,21 @@
-public class Node {
-	protected int base;
-	protected String data;
-	protected Node[] children;
+public class Node<K extends Comparable<K>, T> {
+    public K key;
+    public T data;
+    public Node<K, T> p;
+    public Node<K, T> l;
+    public Node<K, T> r;
 
-	Node () { this.children =  new Node[2]; base = 2; }
-	Node (int base) { this.children =  new Node[base]; this.base = base; }
-	Node (String data) { this.data = data; this.children = new Node[2]; this.base = 2; }
-	Node (String data, int base) { this.data = data; this.children = new Node[base]; this.base = base; }
-	
-	public String getData () {
-		return  data;
-	}
+    public Node() {
 
-	public void setData (String data) {
-		this.data = data;
-	}
+    }
+
+    public Node(K key) {
+        this.key = key;
+    }
+
+    public Node(K key, T data) {
+        this.key = key;
+        this.data = data;
+
+    }
 }

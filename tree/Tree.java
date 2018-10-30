@@ -1,157 +1,49 @@
-class Tree<T extends Comparable<T>> {
+import java.util.LinkedList;
 
-    public Node root;
+interface Tree<K extends Comparable<K>, T> {
 
-    public class Node {
-        public Node left;
-        public Node right;
-        public T value;
+    void insert(Node<K, T> root);
 
-        Node (T value) {
-            this(value, null, null);
-        }
+    default void levelTraversal(Node<K, T> root) {
+        LinkedList<Node<K, T>> queue = new LinkedList<>();
 
-        Node (T value, Node left, Node right) {
-            this.left = left;
-            this.right = right;
-            this.value = value;
+        while (root != null) {
+
+            visitNode(root);
+            if (root.l != null) queue.offer(root.l);
+            if (root.r != null) queue.offer(root.r);
+            root = queue.pop();
         }
     }
 
-    boolean insert(T value) {
-
-        if (this.root == null) {
-            this.root = new Node(value);
-            return true;
+    default void prevTraversal(Node<K, T> root) {}
+    default void prevTraversalRecursion(Node<K,T> root) {
+        if (root != null) {
+            visitNode(root);
+            prevTraversalRecursion(root.l);
+            prevTraversalRecursion(root.r);
         }
-
-        return insert(this.root, value);
     }
 
-    boolean insert(Node root, T value) {
-
-        if (root == null) {
-            return false;
+    default void midTraversal(Node<K, T> root) {}
+    default void midTraversalRecursion(Node<K, T> root) {
+        if (root != null) {
+            midTraversalRecursion(root.l);
+            visitNode(root);
+            midTraversalRecursion(root.r);
         }
-
-        Node temp = root;
-        Node parent = null;
-
-        while (temp != null) {
-            parent = temp;
-            if (temp.value.compareTo(value) > 0) {
-                temp = temp.left;
-            } else if (temp.value.compareTo(value) < 0) {
-                temp = temp.right;
-            } else {
-                return false;
-            }
-        }
-
-        temp = new Node(value);
-
-        if (parent.value.compareTo(value) > 0) {
-            parent.left = temp;
-        } else {
-            parent.right = temp;
-        }
-
-        return true;
     }
 
-    boolean delete(T value) {
-        return delete(this.root, value);
+    default void tailTraversal(Node<K,T> root) {}
+    default void tailTraversalRecursion(Node<K,T> root) {
+        if (root != null) {
+            tailTraversalRecursion(root.l);
+            tailTraversalRecursion(root.r);
+            visitNode(root);
+        }
     }
 
-    boolean delete(Node root, T value) {
-
-        if (root == null) {
-            return false;
-        }
-
-        Node temp = root;
-        Node parent = null;
-
-        boolean isLeft = true;
-
-        while (temp != null) {
-
-            parent = temp;
-
-            if (temp.value.compareTo(value) > 0) {
-                isLeft = true;
-                temp = temp.left;
-            } else if (temp.value.compareTo(value) < 0) {
-                isLeft = false;
-                temp = temp.right;
-            } else {
-                break;
-            }
-
-            if (temp == null) {
-                return false;
-            }
-        }
-
-        // 左右都为null
-        if (temp.left == null && temp.right == null) {
-
-            if (temp == root) {
-                this.root = null;
-                return true;
-            } else if (isLeft) {
-                parent.left = null;
-            } else {
-                parent.right = null;
-            }
-
-        // 左为null
-        } else if (temp.left == null) {
-
-            if (temp == root) {
-                this.root = temp.right;
-            } else if (isLeft) {
-                parent.left = temp.right;
-            } else {
-                parent.right = temp.right;
-            }
-
-        // 右为null
-        } else if (temp.right == null) {
-
-            if (temp == root) {
-                this.root = temp.left;
-            } else if (isLeft) {
-                parent.left == temp.left;
-            } else {
-                parent.right = temp.left;
-            }
-
-        } else {
-        // 左右都不为null
-            Node par = temp;
-            Node sub = temp.left;
-
-            while (sub.right != null) {
-                par = sub;
-                sub = sub.right;
-            }
-
-            if (sub.left) {
-                if (par == temp) {
-                    temp.left = sub.left;
-                } else {
-                    par.right = sub.left;
-                }
-            }
-
-            if (parent.left == temp) {
-                parent.left == sub;
-            } else {
-                parent.right = sub;
-            }
-
-            sub = null;
-        }
+    default void visitNode(Node<K, T> root) {
+        System.out.print(root.key.toString() + " ");
     }
 }
