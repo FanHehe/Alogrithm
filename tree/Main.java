@@ -16,10 +16,11 @@ public class Main {
         tree.insert(-1);
         tree.remove(1);
 
-        tree.prevTraversalRecursion(tree.root);
+        tree.prevTraversal(tree.root);
         System.out.println("");
-        tree.midTraversalRecursion(tree.root);
+        tree.midTraversal(tree.root);
         System.out.println("");
-        tree.tailTraversalRecursion(tree.root);
+        tree.tailTraversal(tree.root);
+        System.out.println("");
     }
 }

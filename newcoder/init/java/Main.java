@@ -73,6 +73,6 @@ public class Main {
     }
 
     public static <T extends Comparable<T>> List<T> delete(List<T> array, T value) {
-
+        return
     }
 }
